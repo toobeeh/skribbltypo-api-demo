@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build.gh-pages": "vite build --outDir gh-pages",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json",
     "generate:api": "openapi-generator-cli generate -i https://api.typo.rip/openapi.json -g typescript-fetch -o src/api/ -p=removeOperationIdPrefix=true --skip-validate-spec"
