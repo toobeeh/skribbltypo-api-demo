@@ -16,6 +16,9 @@ body {
   width: 100vw;
   margin: 0;
 }
+span {
+  text-align: center;
+}
 
 main {
   padding: 2em;

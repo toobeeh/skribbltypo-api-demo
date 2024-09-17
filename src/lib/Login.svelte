@@ -2,6 +2,7 @@
     /* handler for window messages */
     import {ApiFactory} from "../util/apiFactory";
 
+    /*listens for a login result from the login popup*/
     const listenOnce = () => {
         window.addEventListener("message", async event => {
             if (!event.data || !event.data.accessToken || event.data.accessToken == "") listenOnce();
@@ -29,5 +30,6 @@
 </style>
 
 <div>
+    <!--login button-->
     <input type="button" on:click={login} value="Log in with Typo" />
 </div>
