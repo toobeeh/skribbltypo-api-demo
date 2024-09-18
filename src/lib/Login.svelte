@@ -5,7 +5,7 @@
     /*listens for a login result from the login popup*/
     const listenOnce = () => {
         window.addEventListener("message", async event => {
-            if (!event.data || !event.data.accessToken || event.data.accessToken == "") listenOnce();
+            if (!event.data || !event.data.accessToken || event.data.accessToken === "") listenOnce();
             else {
                 const accessToken = event.data.accessToken;
                 console.log("Logged in with token: ", accessToken);

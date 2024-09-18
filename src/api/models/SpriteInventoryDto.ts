@@ -24,7 +24,7 @@ export interface SpriteInventoryDto {
      * @type {number}
      * @memberof SpriteInventoryDto
      */
-    slot: number;
+    slot?: number;
     /**
      * A sprite Id
      * @type {number}
@@ -36,16 +36,14 @@ export interface SpriteInventoryDto {
      * @type {number}
      * @memberof SpriteInventoryDto
      */
-    colorShift: number;
+    colorShift?: number;
 }
 
 /**
  * Check if a given object implements the SpriteInventoryDto interface.
  */
 export function instanceOfSpriteInventoryDto(value: object): value is SpriteInventoryDto {
-    if (!('slot' in value) || value['slot'] === undefined) return false;
     if (!('spriteId' in value) || value['spriteId'] === undefined) return false;
-    if (!('colorShift' in value) || value['colorShift'] === undefined) return false;
     return true;
 }
 
@@ -59,9 +57,9 @@ export function SpriteInventoryDtoFromJSONTyped(json: any, ignoreDiscriminator: 
     }
     return {
         
-        'slot': json['slot'],
+        'slot': json['slot'] == null ? undefined : json['slot'],
         'spriteId': json['spriteId'],
-        'colorShift': json['colorShift'],
+        'colorShift': json['colorShift'] == null ? undefined : json['colorShift'],
     };
 }
 

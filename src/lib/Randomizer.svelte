@@ -34,7 +34,7 @@
     function getSpriteComboNames(spriteInventory: SpriteInventoryDto[], allSprites: SpriteDto[]) {
         return spriteInventory
             .filter(inv => inv.slot !== undefined)
-            .sort((a, b) => a.slot - b.slot)
+            .sort((a, b) => (a.slot ?? 0) - (b.slot ?? 0))
             .map(inv => {
             const spriteData = allSprites.find(sprite => sprite.id === inv.spriteId);
             return spriteData ? spriteData.name : "Unknown";

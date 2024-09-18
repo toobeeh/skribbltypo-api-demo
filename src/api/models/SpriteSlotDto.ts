@@ -30,7 +30,7 @@ export interface SpriteSlotDto {
      * @type {number}
      * @memberof SpriteSlotDto
      */
-    spriteId: number;
+    spriteId?: number;
 }
 
 /**
@@ -38,7 +38,6 @@ export interface SpriteSlotDto {
  */
 export function instanceOfSpriteSlotDto(value: object): value is SpriteSlotDto {
     if (!('slotId' in value) || value['slotId'] === undefined) return false;
-    if (!('spriteId' in value) || value['spriteId'] === undefined) return false;
     return true;
 }
 
@@ -53,7 +52,7 @@ export function SpriteSlotDtoFromJSONTyped(json: any, ignoreDiscriminator: boole
     return {
         
         'slotId': json['slotId'],
-        'spriteId': json['spriteId'],
+        'spriteId': json['spriteId'] == null ? undefined : json['spriteId'],
     };
 }
 
