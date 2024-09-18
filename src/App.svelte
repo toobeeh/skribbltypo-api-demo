@@ -1,12 +1,14 @@
 <script lang="ts">
   import Login from "./lib/Login.svelte";
   import {ApiFactory} from "./util/apiFactory";
-  import {writable} from "svelte/store";
-  import {InventoryApi, type MemberDto, MembersApi, SpritesApi} from "./api";
+  import {MembersApi} from "./api";
   import Welcome from "./lib/Welcome.svelte";
   import Randomizer from "./lib/Randomizer.svelte";
 
+  /*create an api client*/
   const memberApi = ApiFactory.createApi(MembersApi);
+
+  /*reference to token to listen for updates*/
   const token = ApiFactory.authToken;
 
 </script>
